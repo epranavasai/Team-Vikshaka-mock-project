@@ -1,0 +1,15 @@
+{
+    "mcpServers":{
+        "instagram_mcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/enugurupranavasai/Desktop/Buildathon/team-vikshaka/poster_generator/mcp_server/main.py"
+      ]
+    }
+}
+}

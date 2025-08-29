@@ -1,0 +1,18 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+# This file is used to ignore files and directories that should not be tracked by Git.
+# Common examples include:
+# - Compiled code (e.g., .pyc files)
+# - Virtual environment directories (e.g., venv/)
+# - IDE configuration files (e.g., .vscode/, .idea/)
+# - System files (e.g., .DS_Store on macOS)
+# - Logs and temporary files (e.g., *.log, tmp/)    
+
+.venv/
+team-vikshaka-mcp-server/
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+.DS_Store
+*.log
+tmp/    poster_generator/post_scheduler/reviews_expanded.csv
