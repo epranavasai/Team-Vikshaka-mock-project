@@ -1,0 +1,9 @@
+torch
+dotenv
+streamlit
+langgraph
+transformers
+Pillow
+requests
+asyncio
+scikit-learn
