@@ -1,5 +1,5 @@
 import ollama, json, re
-from retriever import retrieve_product
+from .retriever import retrieve_product
 
 def evaluate_reply_with_teacher(comment, reply, embedder, index, df, threshold=0.7):
     product_info = retrieve_product(comment, embedder, index, df)

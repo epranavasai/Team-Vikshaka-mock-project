@@ -1,5 +1,5 @@
 import ollama
-from retriever import retrieve_product
+from .retriever import retrieve_product
 
 def generate_reply(comment, embedder, index, df):
     product_info = retrieve_product(comment, embedder, index, df)
