@@ -104,11 +104,12 @@ if menu == "Poster Generation":
                 # Generate caption
                 caption = asyncio.run(generate_caption(brand_name, product_desc, image_url))
             
+            print(caption)
             matches = re.findall(r'"([^"]*)"', caption)
             if matches:
                 caption = matches[0]
 
-            poster_image = Image.open("poster_generator/poster_0.png")
+            poster_image = Image.open("poster_0.png")
             resized_poster = poster_image.resize((400, 500))
             st.image(resized_poster, caption="Generated Poster")
 
@@ -118,7 +119,8 @@ if menu == "Poster Generation":
             model = load_model(path="poster_generator/post_scheduler/posting_model.pkl")
             top_windows = suggest_posting_windows(model, product_desc, top_n=1)
             st.subheader("Suggested Posting Time:")
-            st.write(top_windows[0]['window'])
+            st.write("Suggested Date: ", top_windows[0]['window'])
+            st.write("Suggested hourly windows: [05:00 PM – 06:00 PM] and [12:00 PM – 3:00 PM]", )
         else:
             st.error("Please provide all inputs (Brand Name, Product Description, and Product Image URL).")
 
@@ -164,12 +166,12 @@ elif menu == "QandA":
         else:
             st.info("CSV already uploaded and indexed. You can ask questions below.")
 
-    # -----------------------------
-    # Display first 5 rows always if dataframe exists
-    # -----------------------------
-    if st.session_state.df is not None:
-        st.markdown("### Preview: First 5 Rows of the Uploaded CSV")
-        st.dataframe(st.session_state.df.head())
+    # # -----------------------------
+    # # Display first 5 rows always if dataframe exists
+    # # -----------------------------
+    # if st.session_state.df is not None:
+    #     st.markdown("### Preview: First 5 Rows of the Uploaded CSV")
+    #     st.dataframe(st.session_state.df.head())
 
     # Question answering
     st.markdown("### 2️⃣ Ask a question")

@@ -22,4 +22,5 @@ async def get_posts(limit: int = 5) -> Dict[str, Any]:
         return {"observation": ["No posts found or error occurred."]}
 
     formatted_posts = await format_posts(data)
+    print("Formatted Posts:", formatted_posts)
     return {"observation": formatted_posts}

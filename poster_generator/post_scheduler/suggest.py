@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 
-def suggest_posting_windows(model, description, top_n=1, window_days=1, season_span=30):
+def suggest_posting_windows(model, description, top_n=1, window_days=0, season_span=30):
     all_days = pd.DataFrame({"day_of_year": np.arange(1, 366)})
     all_days["sin_day"] = np.sin(2 * np.pi * all_days["day_of_year"] / 365)
     all_days["cos_day"] = np.cos(2 * np.pi * all_days["day_of_year"] / 365)
@@ -22,7 +22,7 @@ def suggest_posting_windows(model, description, top_n=1, window_days=1, season_s
             start_dt = datetime(2021, 1, 1) + timedelta(days=start-1)
             end_dt = datetime(2021, 1, 1) + timedelta(days=end-1)
             windows.append({
-                "window": f"{start_dt:%b %d} – {end_dt:%b %d}",
+                "window": f"{start_dt:%b %d}",
                 "predicted_reviews": float(score)
             })
             used.append(doy)

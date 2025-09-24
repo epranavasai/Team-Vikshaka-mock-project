@@ -53,6 +53,7 @@ class LLMService:
                 "Based on this analysis, generate a new caption for the given product.\n\n"
                 "The new caption should match the tone of past successful posts "
                 "and aim to maximize user engagement (likes, comments, shares, saves)."
+                "Generate only the caption as a single line output."
             )
 
             return await self._query_llm(followup_prompt)
